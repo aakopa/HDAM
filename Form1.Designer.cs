@@ -43,10 +43,13 @@
             this.C_Drive_Read = new System.Windows.Forms.Timer(this.components);
             this.C_DiskRead = new System.Diagnostics.PerformanceCounter();
             this.C_DiskWrite = new System.Diagnostics.PerformanceCounter();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             ((System.ComponentModel.ISupportInitialize)(this.D_DiskRead)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.D_DiskWrite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.C_DiskRead)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.C_DiskWrite)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ReadSpeed
@@ -91,7 +94,7 @@
             // 
             // Select1
             // 
-            this.Select1.Location = new System.Drawing.Point(233, 10);
+            this.Select1.Location = new System.Drawing.Point(233, 26);
             this.Select1.Name = "Select1";
             this.Select1.Size = new System.Drawing.Size(92, 23);
             this.Select1.TabIndex = 4;
@@ -129,7 +132,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "C: Drive",
             "D: Drive"});
-            this.comboBox1.Location = new System.Drawing.Point(62, 12);
+            this.comboBox1.Location = new System.Drawing.Point(55, 28);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(140, 21);
             this.comboBox1.TabIndex = 5;
@@ -158,11 +161,29 @@
             this.C_DiskWrite.InstanceName = "0 C:";
             this.C_DiskWrite.MachineName = "Perttu-PC";
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(377, 25);
+            this.toolStrip1.TabIndex = 6;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(40, 22);
+            this.toolStripLabel1.Text = "About";
+            this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(377, 182);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.Select1);
             this.Controls.Add(this.WriteSpeedText);
@@ -175,6 +196,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.D_DiskWrite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.C_DiskRead)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.C_DiskWrite)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,6 +219,8 @@
         private System.Windows.Forms.Timer C_Drive_Read;
         private System.Diagnostics.PerformanceCounter C_DiskRead;
         private System.Diagnostics.PerformanceCounter C_DiskWrite;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
     }
 }
 

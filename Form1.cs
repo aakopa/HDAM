@@ -142,6 +142,12 @@ namespace Hard_Drive_Activity_Monitor
                 WriteSpeed.Text = "0";
             }
         }
+
+        private void toolStripLabel1_Click(object sender, EventArgs e)
+        {
+            AboutBox1 box = new AboutBox1();
+            box.ShowDialog();
+        }
     }
 
        
