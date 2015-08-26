@@ -55,28 +55,28 @@
             // ReadSpeed
             // 
             this.ReadSpeed.AutoSize = true;
-            this.ReadSpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReadSpeed.Location = new System.Drawing.Point(75, 66);
+            this.ReadSpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReadSpeed.Location = new System.Drawing.Point(61, 66);
             this.ReadSpeed.Name = "ReadSpeed";
-            this.ReadSpeed.Size = new System.Drawing.Size(31, 33);
+            this.ReadSpeed.Size = new System.Drawing.Size(76, 31);
             this.ReadSpeed.TabIndex = 0;
-            this.ReadSpeed.Text = "0";
+            this.ReadSpeed.Text = "0 MB";
             // 
             // WriteSpeed
             // 
             this.WriteSpeed.AutoSize = true;
-            this.WriteSpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WriteSpeed.Location = new System.Drawing.Point(251, 66);
+            this.WriteSpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WriteSpeed.Location = new System.Drawing.Point(227, 66);
             this.WriteSpeed.Name = "WriteSpeed";
-            this.WriteSpeed.Size = new System.Drawing.Size(31, 33);
+            this.WriteSpeed.Size = new System.Drawing.Size(76, 31);
             this.WriteSpeed.TabIndex = 1;
-            this.WriteSpeed.Text = "0";
+            this.WriteSpeed.Text = "0 MB";
             // 
             // ReadSpeedText
             // 
             this.ReadSpeedText.AutoSize = true;
             this.ReadSpeedText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReadSpeedText.Location = new System.Drawing.Point(37, 125);
+            this.ReadSpeedText.Location = new System.Drawing.Point(51, 116);
             this.ReadSpeedText.Name = "ReadSpeedText";
             this.ReadSpeedText.Size = new System.Drawing.Size(116, 24);
             this.ReadSpeedText.TabIndex = 2;
@@ -86,7 +86,7 @@
             // 
             this.WriteSpeedText.AutoSize = true;
             this.WriteSpeedText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WriteSpeedText.Location = new System.Drawing.Point(211, 125);
+            this.WriteSpeedText.Location = new System.Drawing.Point(211, 116);
             this.WriteSpeedText.Name = "WriteSpeedText";
             this.WriteSpeedText.Size = new System.Drawing.Size(114, 24);
             this.WriteSpeedText.TabIndex = 3;
@@ -100,7 +100,7 @@
             this.Select1.TabIndex = 4;
             this.Select1.Text = "Select";
             this.Select1.UseVisualStyleBackColor = true;
-            this.Select1.Click += new System.EventHandler(this.Refresh1_Click);
+            this.Select1.Click += new System.EventHandler(this.Select1_Click);
             // 
             // D_DiskRead
             // 
@@ -132,9 +132,9 @@
             this.comboBox1.Items.AddRange(new object[] {
             "C: Drive",
             "D: Drive"});
-            this.comboBox1.Location = new System.Drawing.Point(55, 28);
+            this.comboBox1.Location = new System.Drawing.Point(55, 26);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(140, 21);
+            this.comboBox1.Size = new System.Drawing.Size(153, 21);
             this.comboBox1.TabIndex = 5;
             // 
             // C_Drive_Write

@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Hard Drive Activity Monitor")]
-[assembly: AssemblyDescription("Hard Drive Activity Monitor displays your hard drives read and write speed every second.")]
+[assembly: AssemblyDescription("Hard Drive Activity Monitor displays read and write speed of your hard drives in megabytes (MB) every second.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Perttu Antikainen")]
 [assembly: AssemblyProduct("Hard Drive Activity Monitor")]

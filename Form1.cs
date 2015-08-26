@@ -20,16 +20,8 @@ namespace Hard_Drive_Activity_Monitor
           
         }
 
-         
 
-
-        
-
-
-
-
-
-        private void Refresh1_Click(object sender, EventArgs e)
+        private void Select1_Click(object sender, EventArgs e)
         {
             //PerformanceCounter DDriveRead = new PerformanceCounter("PhysicalDisk", "Disk Read Bytes/sec", "1 D:")
             //float x = performanceCounter1.NextValue() / 1000000;
@@ -58,46 +50,44 @@ namespace Hard_Drive_Activity_Monitor
        
         private void D_Drive_Read_Tick(object sender, EventArgs e)
         {
-            //PerformanceCounter DDriveRead = new PerformanceCounter("PhysicalDisk", "Disk Read Bytes/sec", "1 D:")
             float DDriveReadx = D_DiskRead.NextValue() / 1000000;
           
             if (DDriveReadx > 0)
             {
                 if (DDriveReadx < 1)
                 {
-                    ReadSpeed.Text = DDriveReadx.ToString("0.##");
+                    ReadSpeed.Text = DDriveReadx.ToString("0.## MB");
                 }
                 else
                 {
-                    ReadSpeed.Text = DDriveReadx.ToString("#.##");
+                    ReadSpeed.Text = DDriveReadx.ToString("#.## MB");
                 }          
             }
             else
             {
-                ReadSpeed.Text = "0";
+                ReadSpeed.Text = "0 MB";
             }
             
         }
 
         private void D_Drive_Write_Tick(object sender, EventArgs e)
         {
-            //PerformanceCounter DDriveWrite = new PerformanceCounter("PhysicalDisk", "Disk Write Bytes/sec", "1 D:")
             float DDriveWritex = D_DiskWrite.NextValue() / 1000000;
 
             if (DDriveWritex > 0)
             {
                 if (DDriveWritex < 1)
                 {
-                    WriteSpeed.Text = DDriveWritex.ToString("0.##");
+                    WriteSpeed.Text = DDriveWritex.ToString("0.## MB");
                 }
                 else
                 {
-                    WriteSpeed.Text = DDriveWritex.ToString("#.##");
+                    WriteSpeed.Text = DDriveWritex.ToString("#.## MB");
                 }
             }
             else
             {
-                WriteSpeed.Text = "0";
+                WriteSpeed.Text = "0 MB";
             }
         }
 
@@ -109,16 +99,16 @@ namespace Hard_Drive_Activity_Monitor
             {
                 if (CDriveReadx < 1)
                 {
-                    ReadSpeed.Text = CDriveReadx.ToString("0.##");
+                    ReadSpeed.Text = CDriveReadx.ToString("0.## MB");
                 }
                 else
                 {
-                    ReadSpeed.Text = CDriveReadx.ToString("#.##");
+                    ReadSpeed.Text = CDriveReadx.ToString("#.## MB");
                 }
             }
             else
             {
-                ReadSpeed.Text = "0";
+                ReadSpeed.Text = "0 MB";
             }
         }
 
@@ -130,23 +120,23 @@ namespace Hard_Drive_Activity_Monitor
             {
                 if (CDriveWritex < 1)
                 {
-                    WriteSpeed.Text = CDriveWritex.ToString("0.##");
+                    WriteSpeed.Text = CDriveWritex.ToString("0.## MB");
                 }
                 else
                 {
-                    WriteSpeed.Text = CDriveWritex.ToString("#.##");
+                    WriteSpeed.Text = CDriveWritex.ToString("#.## MB");
                 }
             }
             else
             {
-                WriteSpeed.Text = "0";
+                WriteSpeed.Text = "0 MB";
             }
         }
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
-            AboutBox1 box = new AboutBox1();
-            box.ShowDialog();
+            AboutBox1 Aboutbox = new AboutBox1();
+            Aboutbox.ShowDialog();
         }
     }
 
