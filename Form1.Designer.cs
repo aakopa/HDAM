@@ -34,21 +34,13 @@
             this.ReadSpeedText = new System.Windows.Forms.Label();
             this.WriteSpeedText = new System.Windows.Forms.Label();
             this.Select1 = new System.Windows.Forms.Button();
-            this.D_DiskRead = new System.Diagnostics.PerformanceCounter();
             this.D_Drive_Read = new System.Windows.Forms.Timer(this.components);
             this.D_Drive_Write = new System.Windows.Forms.Timer(this.components);
-            this.D_DiskWrite = new System.Diagnostics.PerformanceCounter();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.C_Drive_Write = new System.Windows.Forms.Timer(this.components);
             this.C_Drive_Read = new System.Windows.Forms.Timer(this.components);
-            this.C_DiskRead = new System.Diagnostics.PerformanceCounter();
-            this.C_DiskWrite = new System.Diagnostics.PerformanceCounter();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.D_DiskRead)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.D_DiskWrite)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.C_DiskRead)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.C_DiskWrite)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,13 +94,6 @@
             this.Select1.UseVisualStyleBackColor = true;
             this.Select1.Click += new System.EventHandler(this.Select1_Click);
             // 
-            // D_DiskRead
-            // 
-            this.D_DiskRead.CategoryName = "PhysicalDisk";
-            this.D_DiskRead.CounterName = "Disk Read Bytes/sec";
-            this.D_DiskRead.InstanceName = "1 D:";
-            this.D_DiskRead.MachineName = "Perttu-PC";
-            // 
             // D_Drive_Read
             // 
             this.D_Drive_Read.Interval = 1000;
@@ -118,13 +103,6 @@
             // 
             this.D_Drive_Write.Interval = 1000;
             this.D_Drive_Write.Tick += new System.EventHandler(this.D_Drive_Write_Tick);
-            // 
-            // D_DiskWrite
-            // 
-            this.D_DiskWrite.CategoryName = "PhysicalDisk";
-            this.D_DiskWrite.CounterName = "Disk Write Bytes/sec";
-            this.D_DiskWrite.InstanceName = "1 D:";
-            this.D_DiskWrite.MachineName = "Perttu-PC";
             // 
             // comboBox1
             // 
@@ -146,20 +124,6 @@
             // 
             this.C_Drive_Read.Interval = 1000;
             this.C_Drive_Read.Tick += new System.EventHandler(this.C_Drive_Read_Tick);
-            // 
-            // C_DiskRead
-            // 
-            this.C_DiskRead.CategoryName = "PhysicalDisk";
-            this.C_DiskRead.CounterName = "Disk Read Bytes/sec";
-            this.C_DiskRead.InstanceName = "0 C:";
-            this.C_DiskRead.MachineName = "Perttu-PC";
-            // 
-            // C_DiskWrite
-            // 
-            this.C_DiskWrite.CategoryName = "PhysicalDisk";
-            this.C_DiskWrite.CounterName = "Disk Write Bytes/sec";
-            this.C_DiskWrite.InstanceName = "0 C:";
-            this.C_DiskWrite.MachineName = "Perttu-PC";
             // 
             // toolStrip1
             // 
@@ -192,10 +156,6 @@
             this.Controls.Add(this.ReadSpeed);
             this.Name = "Form1";
             this.Text = "Hard Drive Activity Monitor";
-            ((System.ComponentModel.ISupportInitialize)(this.D_DiskRead)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.D_DiskWrite)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.C_DiskRead)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.C_DiskWrite)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -210,15 +170,11 @@
         private System.Windows.Forms.Label ReadSpeedText;
         private System.Windows.Forms.Label WriteSpeedText;
         private System.Windows.Forms.Button Select1;
-        private System.Diagnostics.PerformanceCounter D_DiskRead;
         private System.Windows.Forms.Timer D_Drive_Read;
         private System.Windows.Forms.Timer D_Drive_Write;
-        private System.Diagnostics.PerformanceCounter D_DiskWrite;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Timer C_Drive_Write;
         private System.Windows.Forms.Timer C_Drive_Read;
-        private System.Diagnostics.PerformanceCounter C_DiskRead;
-        private System.Diagnostics.PerformanceCounter C_DiskWrite;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
     }

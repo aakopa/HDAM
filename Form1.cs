@@ -20,6 +20,8 @@ namespace Hard_Drive_Activity_Monitor
           
         }
 
+       
+
 
         private void Select1_Click(object sender, EventArgs e)
         {
@@ -47,10 +49,14 @@ namespace Hard_Drive_Activity_Monitor
             
 
         }
-       
+
+        private PerformanceCounter D_DiskRead = 
+           new PerformanceCounter("PhysicalDisk", "Disk Read Bytes/sec", "1 D:", true);
+        
+
         private void D_Drive_Read_Tick(object sender, EventArgs e)
         {
-            float DDriveReadx = D_DiskRead.NextValue() / 1000000;
+            float DDriveReadx = this.D_DiskRead.NextValue() / 1000000;
           
             if (DDriveReadx > 0)
             {
@@ -70,9 +76,12 @@ namespace Hard_Drive_Activity_Monitor
             
         }
 
+        private PerformanceCounter D_DiskWrite =
+           new PerformanceCounter("PhysicalDisk", "Disk Write Bytes/sec", "1 D:", true);
+
         private void D_Drive_Write_Tick(object sender, EventArgs e)
         {
-            float DDriveWritex = D_DiskWrite.NextValue() / 1000000;
+            float DDriveWritex = this.D_DiskWrite.NextValue() / 1000000;
 
             if (DDriveWritex > 0)
             {
@@ -91,9 +100,12 @@ namespace Hard_Drive_Activity_Monitor
             }
         }
 
+        private PerformanceCounter C_DiskRead =
+                   new PerformanceCounter("PhysicalDisk", "Disk Read Bytes/sec", "0 C:", true);
+
         private void C_Drive_Read_Tick(object sender, EventArgs e)
         {
-            float CDriveReadx = C_DiskRead.NextValue() / 1000000;
+            float CDriveReadx = this.C_DiskRead.NextValue() / 1000000;
 
             if (CDriveReadx > 0)
             {
@@ -112,9 +124,12 @@ namespace Hard_Drive_Activity_Monitor
             }
         }
 
+        private PerformanceCounter C_DiskWrite =
+           new PerformanceCounter("PhysicalDisk", "Disk Write Bytes/sec", "0 C:", true);
+
         private void C_Drive_Write_Tick(object sender, EventArgs e)
         {
-            float CDriveWritex = C_DiskWrite.NextValue() / 1000000;
+            float CDriveWritex = this.C_DiskWrite.NextValue() / 1000000;
 
             if (CDriveWritex > 0)
             {
