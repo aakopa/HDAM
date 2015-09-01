@@ -33,7 +33,6 @@
             this.WriteSpeed = new System.Windows.Forms.Label();
             this.ReadSpeedText = new System.Windows.Forms.Label();
             this.WriteSpeedText = new System.Windows.Forms.Label();
-            this.Select1 = new System.Windows.Forms.Button();
             this.D_Drive_Read = new System.Windows.Forms.Timer(this.components);
             this.D_Drive_Write = new System.Windows.Forms.Timer(this.components);
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -84,16 +83,6 @@
             this.WriteSpeedText.TabIndex = 3;
             this.WriteSpeedText.Text = "Write Speed";
             // 
-            // Select1
-            // 
-            this.Select1.Location = new System.Drawing.Point(233, 26);
-            this.Select1.Name = "Select1";
-            this.Select1.Size = new System.Drawing.Size(92, 23);
-            this.Select1.TabIndex = 4;
-            this.Select1.Text = "Select";
-            this.Select1.UseVisualStyleBackColor = true;
-            this.Select1.Click += new System.EventHandler(this.Select1_Click);
-            // 
             // D_Drive_Read
             // 
             this.D_Drive_Read.Interval = 1000;
@@ -112,8 +101,9 @@
             "D: Drive"});
             this.comboBox1.Location = new System.Drawing.Point(55, 26);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(153, 21);
+            this.comboBox1.Size = new System.Drawing.Size(248, 21);
             this.comboBox1.TabIndex = 5;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // C_Drive_Write
             // 
@@ -149,11 +139,12 @@
             this.ClientSize = new System.Drawing.Size(377, 182);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.Select1);
             this.Controls.Add(this.WriteSpeedText);
             this.Controls.Add(this.ReadSpeedText);
             this.Controls.Add(this.WriteSpeed);
             this.Controls.Add(this.ReadSpeed);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Hard Drive Activity Monitor";
             this.toolStrip1.ResumeLayout(false);
@@ -169,7 +160,6 @@
         private System.Windows.Forms.Label WriteSpeed;
         private System.Windows.Forms.Label ReadSpeedText;
         private System.Windows.Forms.Label WriteSpeedText;
-        private System.Windows.Forms.Button Select1;
         private System.Windows.Forms.Timer D_Drive_Read;
         private System.Windows.Forms.Timer D_Drive_Write;
         private System.Windows.Forms.ComboBox comboBox1;

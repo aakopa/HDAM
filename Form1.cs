@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Threading;
+using System.IO;
 
 namespace Hard_Drive_Activity_Monitor
 {
@@ -20,15 +21,9 @@ namespace Hard_Drive_Activity_Monitor
           
         }
 
-       
 
-
-        private void Select1_Click(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //PerformanceCounter DDriveRead = new PerformanceCounter("PhysicalDisk", "Disk Read Bytes/sec", "1 D:")
-            //float x = performanceCounter1.NextValue() / 1000000;
-            //ReadSpeed.Text = x.ToString();
-
             C_Drive_Read.Enabled = false;
             C_Drive_Write.Enabled = false;
             D_Drive_Read.Enabled = false;
@@ -36,22 +31,38 @@ namespace Hard_Drive_Activity_Monitor
 
             if (comboBox1.Text == "C: Drive")
             {
-                C_Drive_Read.Enabled = true;
-                C_Drive_Write.Enabled = true;
+                if (!Directory.Exists("C:"))
+                {
+                    ReadSpeed.Text = "0 MB";
+                    WriteSpeed.Text = "0 MB";
+                }
+                else
+                {
+                    C_Drive_Read.Enabled = true;
+                    C_Drive_Write.Enabled = true;
+                }
             }
 
             if (comboBox1.Text == "D: Drive")
             {
-                D_Drive_Read.Enabled = true;
-                D_Drive_Write.Enabled = true;
+
+                if (!Directory.Exists("D:"))
+                {
+                    ReadSpeed.Text = "0 MB";
+                    WriteSpeed.Text = "0 MB";
+                }
+                else
+                {
+                    D_Drive_Read.Enabled = true;
+                    D_Drive_Write.Enabled = true;
+
+                }
             }
-
-            
-
         }
 
+
         private PerformanceCounter D_DiskRead = 
-           new PerformanceCounter("PhysicalDisk", "Disk Read Bytes/sec", "1 D:", true);
+           new PerformanceCounter("PhysicalDisk", "Disk Read Bytes/sec", "1 D:");
         
 
         private void D_Drive_Read_Tick(object sender, EventArgs e)
@@ -77,7 +88,7 @@ namespace Hard_Drive_Activity_Monitor
         }
 
         private PerformanceCounter D_DiskWrite =
-           new PerformanceCounter("PhysicalDisk", "Disk Write Bytes/sec", "1 D:", true);
+           new PerformanceCounter("PhysicalDisk", "Disk Write Bytes/sec", "1 D:");
 
         private void D_Drive_Write_Tick(object sender, EventArgs e)
         {
@@ -101,7 +112,7 @@ namespace Hard_Drive_Activity_Monitor
         }
 
         private PerformanceCounter C_DiskRead =
-                   new PerformanceCounter("PhysicalDisk", "Disk Read Bytes/sec", "0 C:", true);
+                   new PerformanceCounter("PhysicalDisk", "Disk Read Bytes/sec", "0 C:");
 
         private void C_Drive_Read_Tick(object sender, EventArgs e)
         {
@@ -125,7 +136,7 @@ namespace Hard_Drive_Activity_Monitor
         }
 
         private PerformanceCounter C_DiskWrite =
-           new PerformanceCounter("PhysicalDisk", "Disk Write Bytes/sec", "0 C:", true);
+           new PerformanceCounter("PhysicalDisk", "Disk Write Bytes/sec", "0 C:");
 
         private void C_Drive_Write_Tick(object sender, EventArgs e)
         {
@@ -153,6 +164,8 @@ namespace Hard_Drive_Activity_Monitor
             AboutBox1 Aboutbox = new AboutBox1();
             Aboutbox.ShowDialog();
         }
+
+        
     }
 
        
