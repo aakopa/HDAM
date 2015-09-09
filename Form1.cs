@@ -62,7 +62,7 @@ namespace Hard_Drive_Activity_Monitor
 
 
         private PerformanceCounter D_DiskRead = 
-           new PerformanceCounter("PhysicalDisk", "Disk Read Bytes/sec", "1 D:");
+           new PerformanceCounter("LogicalDisk", "Disk Read Bytes/sec", "D:");
         
 
         private void D_Drive_Read_Tick(object sender, EventArgs e)
@@ -88,7 +88,7 @@ namespace Hard_Drive_Activity_Monitor
         }
 
         private PerformanceCounter D_DiskWrite =
-           new PerformanceCounter("PhysicalDisk", "Disk Write Bytes/sec", "1 D:");
+           new PerformanceCounter("LogicalDisk", "Disk Write Bytes/sec", "D:");
 
         private void D_Drive_Write_Tick(object sender, EventArgs e)
         {
@@ -112,7 +112,7 @@ namespace Hard_Drive_Activity_Monitor
         }
 
         private PerformanceCounter C_DiskRead =
-                   new PerformanceCounter("PhysicalDisk", "Disk Read Bytes/sec", "0 C:");
+                   new PerformanceCounter("LogicalDisk", "Disk Read Bytes/sec", "C:");
 
         private void C_Drive_Read_Tick(object sender, EventArgs e)
         {
@@ -136,7 +136,7 @@ namespace Hard_Drive_Activity_Monitor
         }
 
         private PerformanceCounter C_DiskWrite =
-           new PerformanceCounter("PhysicalDisk", "Disk Write Bytes/sec", "0 C:");
+           new PerformanceCounter("LogicalDisk", "Disk Write Bytes/sec", "C:");
 
         private void C_Drive_Write_Tick(object sender, EventArgs e)
         {
