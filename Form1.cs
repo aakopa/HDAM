@@ -165,6 +165,92 @@ namespace Hard_Drive_Activity_Monitor
             Aboutbox.ShowDialog();
         }
 
+        private void SystemUpTime_Tick(object sender, EventArgs e)
+        {
+
+            
+
+            PerformanceCounter SysUpTime = new PerformanceCounter("System", "System Up Time");
+            SysUpTime.NextValue();
+
+            TimeSpan timespan = TimeSpan.FromSeconds(SysUpTime.NextValue());
+
+            //string systemUptimeMessage = string.Format("{0}:{1}:{2}",
+            //    (int)timespan.Hours,
+            //    (int)timespan.Minutes,
+            //    timespan.Seconds
+            //    );
+
+            #region TotalDays
+            string Days;
+            int days = (int)timespan.TotalDays;
+
+            if (days < 10)
+            {
+                
+                Days = days.ToString("0#");
+           
+            }
+            else
+            {
+                Days = days.ToString("##");
+            }
+            #endregion
+            #region Hours
+            string Hours;
+            int hours = (int)timespan.Hours;
+
+            if (hours < 10)
+            {
+
+                Hours = hours.ToString("0#");
+
+            }
+            else
+            {
+                Hours = hours.ToString("##");
+            }
+            #endregion
+            #region Minutes
+            string Minutes;
+            int minutes = (int)timespan.Minutes;
+
+            if (minutes < 10)
+            {
+
+                Minutes = minutes.ToString("0#");
+
+            }
+            else
+            {
+                Minutes = minutes.ToString("##");
+            }
+            #endregion
+            #region Seconds
+            string Seconds;
+            int seconds = (int)timespan.Seconds;
+
+            if (seconds < 10)
+            {
+
+                Seconds = seconds.ToString("0#");
+
+            }
+            else
+            {
+                Seconds = seconds.ToString("##");
+            }
+            #endregion
+
+            string systemUptimeMessage = "System up time is: " + Days + ":" + Hours + ":" + Minutes + ":" + Seconds;
+
+            SystemUpTime.Text = systemUptimeMessage;
+
+
+
+
+        }
+
         
     }
 

@@ -40,6 +40,8 @@
             this.C_Drive_Read = new System.Windows.Forms.Timer(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.SystemUpTime1 = new System.Windows.Forms.Timer(this.components);
+            this.SystemUpTime = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,11 +134,27 @@
             this.toolStripLabel1.Text = "About";
             this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
+            // SystemUpTime1
+            // 
+            this.SystemUpTime1.Enabled = true;
+            this.SystemUpTime1.Interval = 1000;
+            this.SystemUpTime1.Tick += new System.EventHandler(this.SystemUpTime_Tick);
+            // 
+            // SystemUpTime
+            // 
+            this.SystemUpTime.AutoSize = true;
+            this.SystemUpTime.Location = new System.Drawing.Point(109, 160);
+            this.SystemUpTime.Name = "SystemUpTime";
+            this.SystemUpTime.Size = new System.Drawing.Size(84, 13);
+            this.SystemUpTime.TabIndex = 7;
+            this.SystemUpTime.Text = "System Up Time";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(377, 182);
+            this.Controls.Add(this.SystemUpTime);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.WriteSpeedText);
@@ -167,6 +185,8 @@
         private System.Windows.Forms.Timer C_Drive_Read;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.Timer SystemUpTime1;
+        private System.Windows.Forms.Label SystemUpTime;
     }
 }
 
