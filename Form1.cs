@@ -196,6 +196,7 @@ namespace Hard_Drive_Activity_Monitor
                 Days = days.ToString("##");
             }
             #endregion
+
             #region Hours
             string Hours;
             int hours = (int)timespan.Hours;
@@ -211,6 +212,7 @@ namespace Hard_Drive_Activity_Monitor
                 Hours = hours.ToString("##");
             }
             #endregion
+
             #region Minutes
             string Minutes;
             int minutes = (int)timespan.Minutes;
@@ -226,6 +228,7 @@ namespace Hard_Drive_Activity_Monitor
                 Minutes = minutes.ToString("##");
             }
             #endregion
+
             #region Seconds
             string Seconds;
             int seconds = (int)timespan.Seconds;
