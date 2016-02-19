@@ -33,11 +33,9 @@
             this.WriteSpeed = new System.Windows.Forms.Label();
             this.ReadSpeedText = new System.Windows.Forms.Label();
             this.WriteSpeedText = new System.Windows.Forms.Label();
-            this.D_Drive_Read = new System.Windows.Forms.Timer(this.components);
-            this.D_Drive_Write = new System.Windows.Forms.Timer(this.components);
+            this.Drive_Read = new System.Windows.Forms.Timer(this.components);
+            this.Drive_Write = new System.Windows.Forms.Timer(this.components);
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.C_Drive_Write = new System.Windows.Forms.Timer(this.components);
-            this.C_Drive_Read = new System.Windows.Forms.Timer(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.SystemUpTime1 = new System.Windows.Forms.Timer(this.components);
@@ -85,37 +83,25 @@
             this.WriteSpeedText.TabIndex = 3;
             this.WriteSpeedText.Text = "Write Speed";
             // 
-            // D_Drive_Read
+            // Drive_Read
             // 
-            this.D_Drive_Read.Interval = 1000;
-            this.D_Drive_Read.Tick += new System.EventHandler(this.D_Drive_Read_Tick);
+            this.Drive_Read.Interval = 1000;
+            this.Drive_Read.Tick += new System.EventHandler(this.Drive_Read_Tick);
             // 
-            // D_Drive_Write
+            // Drive_Write
             // 
-            this.D_Drive_Write.Interval = 1000;
-            this.D_Drive_Write.Tick += new System.EventHandler(this.D_Drive_Write_Tick);
+            this.Drive_Write.Interval = 1000;
+            this.Drive_Write.Tick += new System.EventHandler(this.Drive_Write_Tick);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "C: Drive",
-            "D: Drive"});
             this.comboBox1.Location = new System.Drawing.Point(55, 26);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(248, 21);
+            this.comboBox1.Sorted = true;
             this.comboBox1.TabIndex = 5;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // C_Drive_Write
-            // 
-            this.C_Drive_Write.Interval = 1000;
-            this.C_Drive_Write.Tick += new System.EventHandler(this.C_Drive_Write_Tick);
-            // 
-            // C_Drive_Read
-            // 
-            this.C_Drive_Read.Interval = 1000;
-            this.C_Drive_Read.Tick += new System.EventHandler(this.C_Drive_Read_Tick);
             // 
             // toolStrip1
             // 
@@ -165,6 +151,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Hard Drive Activity Monitor";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -178,11 +165,9 @@
         private System.Windows.Forms.Label WriteSpeed;
         private System.Windows.Forms.Label ReadSpeedText;
         private System.Windows.Forms.Label WriteSpeedText;
-        private System.Windows.Forms.Timer D_Drive_Read;
-        private System.Windows.Forms.Timer D_Drive_Write;
+        private System.Windows.Forms.Timer Drive_Read;
+        private System.Windows.Forms.Timer Drive_Write;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Timer C_Drive_Write;
-        private System.Windows.Forms.Timer C_Drive_Read;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.Timer SystemUpTime1;
